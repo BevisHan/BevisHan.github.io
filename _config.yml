@@ -1,0 +1,129 @@
+# The Site Configuration
+
+# Import the theme
+theme: jekyll-theme-chirpy
+
+# Language
+lang: zh-CN
+
+# Timezone
+timezone: Asia/Shanghai
+
+# ---------- SEO ----------
+title: Bevis Han
+tagline: 全栈软件工程师
+
+description: >-
+  Bevis Han 的个人网站，记录全栈开发中的技术踩坑、问题排查经验与项目实践。
+  专注于 Java / Spring Cloud 微服务、前端跨平台开发。
+
+url: "https://bevishan.github.io"
+
+github:
+  username: BevisHan
+
+twitter:
+  username: BevisHan
+
+social:
+  name: Bevis Han
+  email: bevis@example.com
+  links:
+    - https://github.com/BevisHan
+
+# ---------- 默认暗色主题 ----------
+theme_mode: dark
+
+# ---------- 头像 ----------
+avatar: /assets/img/avatar.png
+
+# ---------- TOC ----------
+toc: true
+
+# ---------- 评论系统（暂时关闭） ----------
+comments:
+  provider: # disabled
+
+# ---------- 分页 ----------
+paginate: 10
+
+# ---------- PWA ----------
+pwa:
+  enabled: true
+  cache:
+    enabled: true
+    deny_paths:
+
+# ---------- 基础路径 ----------
+baseurl: ""
+
+# ---------- 以下不推荐修改 ----------
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
+  - _notes
+  - scripts
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
